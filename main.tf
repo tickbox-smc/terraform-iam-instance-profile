@@ -64,9 +64,17 @@ resource "aws_iam_role_policy" "ssm_policy" {
             "Effect": "Allow",
             "Action": [
                 "ssm:DescribeAssociation",
+                "ssm:GetDeployablePatchSnapshotForInstance",
                 "ssm:GetDocument",
+                "ssm:GetManifest",
+                "ssm:GetParameters",
                 "ssm:ListAssociations",
+                "ssm:ListInstanceAssociations",
+                "ssm:PutInventory",
+                "ssm:PutComplianceItems",
+                "ssm:PutConfigurePackageResult",
                 "ssm:UpdateAssociationStatus",
+                "ssm:UpdateInstanceAssociationStatus",
                 "ssm:UpdateInstanceInformation"
             ],
             "Resource": "*"
@@ -123,13 +131,13 @@ resource "aws_iam_role_policy" "ssm_policy" {
                 "s3:GetObject",
                 "s3:AbortMultipartUpload",
                 "s3:ListMultipartUploadParts",
+                "s3:ListBucket",
                 "s3:ListBucketMultipartUploads"
             ],
             "Resource": "*"
         }
     ]
-}
-EOF
+}EOF
 }
 
 # Create EC2 Instance Role
