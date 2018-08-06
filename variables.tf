@@ -15,5 +15,5 @@ variable "ec2_readonly_policy" {
 
 variable "instance_profile" {
   description = "Name of the instance profile"
-  default     = "instance_profile"
+  default     = "ec2_instance_profile"
 }
