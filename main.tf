@@ -129,6 +129,7 @@ resource "aws_iam_role_policy" "ssm_policy" {
             "Action": [
                 "s3:PutObject",
                 "s3:GetObject",
+                "s3:DeleteObject",
                 "s3:AbortMultipartUpload",
                 "s3:ListMultipartUploadParts",
                 "s3:ListBucket",
